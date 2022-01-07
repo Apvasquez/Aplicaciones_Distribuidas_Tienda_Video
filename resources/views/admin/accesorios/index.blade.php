@@ -2,15 +2,17 @@
 
     <div class="mt-4 flex-initial flex justify-between">
 
-        <div class="ml-4 w-60">
+        <div class="ml-4 mt-1 p-1 w-60">
             @can('admin.Editar.edit')
-            <a href="{{ route('admin/accesorios/crear') }}"
-            class="bg-stone-200 py-2 px-2 sm:py-3 sm:px-8 text-black font-bold uppercase text-xs rounded hover:bg-purple-800">Agregar</a>
+                <a href="{{ route('admin/accesorios/crear') }}"
+                    class="bg-gray-800 py-3 mt-1 px-2 sm:py-3 border border-white sm:px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-700">Agregar</a>
             @endcan
 
         </div>
         <div class="justify-center mx-auto">
-            <h1 class="flex justify-center text-center text-4xl font-mono sm:text-3xl tracking-wider text-white uppercase font-semibold">Tienda de Juegos</h1>
+            <h1
+                class="flex justify-center text-center text-4xl font-mono sm:text-3xl -ml-14 tracking-wider text-white uppercase font-semibold">
+                Tienda de Juegos</h1>
 
 
         </div>
@@ -18,7 +20,7 @@
     </div>
 
 
-    <div class="min-h-screen mt-2 p-3 mx-4 bg-white bg-opacity-20 shadow-2xl rounded border border-blue-100 shadow-green-600 ">
+    <div class="min-h-screen m-3 border-cyan-300 border p-3  bg-transparent shadow-2xl rounded  shadow-green-600 ">
 
         <div class="mx-12 my-6">
             <div
@@ -30,8 +32,8 @@
                             <img alt="ecommerce" class="object-cover object-center  w-full h-full block"
                                 src="../uploads/{{ $accesorio->imagenesaccesorios()->first()->nombre }}">
                         </a>
-                        <div class="mt-2 pl-2 flex justify-between">
-                            <h3 class="text-gray-500 text-xl  tracking-widest  title-font mb-1">Accesorios </h3>
+                        <div class="mt-0 pl-2 flex justify-between">
+                            <h3 class="text-gray-500 text-xl  tracking-widest  title-font mb-0">Accesorios </h3>
                             <button
                                 onclick="location.href='{{ url('/admin/accesorios/detallesproducto', [$accesorio->id]) }}'"
                                 href="" type="button"
@@ -39,26 +41,26 @@
 
 
                         </div>
-                        <div class="mt-2 pl-2">
+                        <div class="mt-0 pl-2">
 
-                            <h2 class="text-gray-900  font-bold text-lg ">{{ $accesorio->nombre }}</h2>
-                            <p class="mt-1 ">${{ $accesorio->precio }}</p>
+                            <h2 class="text-gray-900  font-bold text-base ">{{ $accesorio->nombre }}</h2>
+                            <p class="mt-0 ">${{ $accesorio->precio }}</p>
                             <form action="{{ route('admin/accesorios/eliminar', $accesorio->id) }}" method="POST"
-                                class="form-horizontal pl-1 " role="form" onsubmit="return confirmarEliminar()">
+                                class="form-horizontal pl-0 " role="form" onsubmit="return confirmarEliminar()">
 
                                 <input type="hidden" name="_method" value="PUT">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                {{--  <a href='{{ route('accesorio.pay', $accesorio) }}'
+                                {{-- <a href='{{ route('accesorio.pay', $accesorio) }}'
                                 href="" type=" button"
-                                    class="bg-yellow-600 py-2 px-2 text-white font-bold uppercase text-xs rounded hover:bg-teal-800">Comprar</a>  --}}
-                                    @can('admin.Editar.edit')
+                                    class="bg-yellow-600 py-2 px-2 text-white font-bold uppercase text-xs rounded hover:bg-teal-800">Comprar</a> --}}
+                                @can('admin.Editar.edit')
                                     <a href="{{ route('admin/accesorios/actualizar', $accesorio->id) }}"
-                                        class="bg-gray-800 py-2 px-4 text-white font-bold uppercase text-xs rounded hover:bg-gray-900">Editar</a>
+                                        class="bg-gray-700 py-2 px-4 text-white font-bold uppercase text-xs rounded hover:bg-gray-900">Editar</a>
 
                                     <button type="submit"
                                         class="bg-red-600 py-2 px-1 text-white font-bold uppercase text-xs rounded hover:bg-red-800">Eliminar</button>
-                                    @endcan
+                                @endcan
 
 
                             </form>
@@ -71,7 +73,7 @@
 
 
 
-            {{--  <div class="py-6">
+            {{-- <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="mt-6 pd-6 container mx-12">
@@ -145,7 +147,7 @@
                         </div>
                     </section>
                 </div>
-            </div>  --}}
+            </div> --}}
         </div>
 
 
@@ -154,6 +156,6 @@
 
 
 
-        </div>
+    </div>
 
 </x-app-layout>
