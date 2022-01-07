@@ -3261,6 +3261,10 @@ textarea.form-control.is-invalid {
   --tw-border-opacity: 1;
   border-color: rgb(219 234 254 / var(--tw-border-opacity));
 }
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -3793,6 +3797,10 @@ textarea.form-control.is-invalid {
 }
 .shadow-green-600 {
   --tw-shadow-color: #16a34a;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.shadow-cyan-300 {
+  --tw-shadow-color: #67e8f9;
   --tw-shadow: var(--tw-shadow-colored);
 }
 .ring-1 {
