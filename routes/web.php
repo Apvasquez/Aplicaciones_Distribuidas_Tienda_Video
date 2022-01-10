@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Acerca;
 use App\Http\Controllers\VideoJuego;
 use App\Http\Controllers\AccesoriosController;
-
+use App\Http\Controllers\CategoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/categorias', [CategoriaController::class, 'index' ] )->name('categorias');
+
 // Rutas CRUD
 
 /* Crear */
