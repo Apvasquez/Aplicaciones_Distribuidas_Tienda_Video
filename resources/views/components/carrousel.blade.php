@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<main class="min-h-screen -mt-12 bg-black text-white flex items-center justify-center" x-data="carouselFilter()">
+<main class="min-h-screen -mt-10 bg-black text-white flex items-center justify-center" x-data="carouselFilter()">
   <div class="container grid grid-cols-1">
     <div class="flex py-8 justify-center">
       <a class="px-2 text-lg uppercase font-bold tracking-widest hover:text-white" :class="{ 'text-gray-800': active != 0 }" href="#" @click.prevent="changeActive(0)">Reseña</a>
