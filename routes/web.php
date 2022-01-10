@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Acerca;
 use App\Http\Controllers\VideoJuego;
 use App\Http\Controllers\AccesoriosController;
+use App\Http\Controllers\ProveedorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\Controllers\AccesoriosController;
 
 Route::get('/acerca',[Acerca::class ,'index'])->name('acerca') ;
 Route::get('/videojuego',[VideoJuego::class ,'index'])->name('videojuego') ;
+Route::get('/proveedor',[ProveedorController::class ,'index'])->name('proveedor') ;
 
 Route::get('/', function () {
     return view('welcome');

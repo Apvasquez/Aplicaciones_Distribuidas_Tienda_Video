@@ -70,26 +70,26 @@
         </div>
 
 @else
-<div class="pl-12 text-xl font-bold  mt-8 mb-6 text-gblac font-mono uppercase w-96 pb-4">
+<div class="pl-12 text-xl font-bold  mt-8 mb-6 text-green-100  font-mono uppercase w-96 pb-4">
     <div class="">
         <label for="nombre" class="p-4">Nombre:</label>
         <div class="text-black ">
-            <input class="form-control" placeholder="Accesorio" required="required" name="nombre" type="text"
+            <input class="form-control rounded" placeholder="Video Juego" required="required" name="nombre" type="text"
                 id="nombre">
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group  ">
         <label for="precio" class="p-4">Precio:</label>
         <div>
-            <input class="form-control" placeholder="2500.00" required="required" name="precio" type="number" id="precio">
+            <input class="form-control rounded text-black" placeholder="2500.00" required="required" name="precio" type="number" id="precio">
         </div>
     </div>
 
     <div class="form-group">
         <label for="stock" class="p-4">Stock:</label>
         <div>
-            <input class="form-control" placeholder="35" required="required" name="stock" type="number" id="stock">
+            <input class="form-control rounded text-black" placeholder="35" required="required" name="stock" type="number" id="stock">
         </div>
     </div>
 

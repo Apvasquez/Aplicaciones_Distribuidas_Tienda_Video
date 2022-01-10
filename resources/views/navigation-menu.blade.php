@@ -18,6 +18,10 @@
                     <x-jet-nav-link href="{{ route('admin/accesorios') }}" :active="request()->routeIs('admin/accesorios')">
                         {{ __('VideoJuegos') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('proveedor') }}" :active="request()->routeIs('proveedor')">
+                        {{ __('Proveedor') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('acerca') }}" :active="request()->routeIs('acerca')">
                         {{ __('Acerca_de') }}
                     </x-jet-nav-link>
