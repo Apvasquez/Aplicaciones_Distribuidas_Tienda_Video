@@ -1,27 +1,27 @@
-<div class=" mt-20 mx-4 border mb-12  border-green-200  rounded-xl shadow-xl pb-13">
+<div class=" mt-2 mx-4 border mb-12  border-green-200  rounded-xl shadow-xl pb-13">
     @if (!empty($accesorios->id))
-        <div class="pl-4 pr-4 text-xl font-bold mx-auto flex mt-8 text-green-800 font-mono uppercase pb-4">
+        <div class="pl-4 pr-4 text-xl font-bold mx-auto flex mt-0 text-green-100 font-mono uppercase pb-4">
             <div class=" w-1/3  px-2 ">
                 <label for="nombre" class="p-4">Nombre:</label>
-                
+
                     <input class="form-control mx-auto w-full" placeholder="Accesorio " required="required" name="nombre" type="text"
                         id="nombre" value="{{ $accesorios->nombre }}">
-                
+
             </div>
 
             <div class=" w-1/3  ">
                 <label for="precio" class="p-4">Precio:</label>
-                
+
                     <input class="form-control w-full" placeholder="0.00" required="required" name="precio" type="text"
                         id="precio" value="{{ $accesorios->precio }}">
-                
+
             </div>
             <div class=" w-1/3  px-2 ">
                 <label for="stock" class="p-4">Stock:</label>
-                
+
                     <input class="form-control w-full " placeholder="100" required="required" name="stock" type="text"
                         id="stock" value="{{ $accesorios->stock }}">
-                
+
             </div>
         </div>
         <div class="pl-12  pb-4  mt-5 text-base font-bold flex   text-gray-800 font-mono uppercase ">
@@ -30,7 +30,7 @@
                 <label for="img" class="negrita">Selecciona una imagen:</label>
                 <div>
                     <input name="img[]" type="file" id="img" multiple="multiple">
-                    
+
 
                     @if (!empty($accesorios->imagenes))
 
@@ -70,10 +70,10 @@
         </div>
 
 @else
-<div class="pl-12 text-xl font-bold  mt-8 mb-6 text-green-500 font-mono uppercase w-96 pb-4">
+<div class="pl-12 text-xl font-bold  mt-8 mb-6 text-gblac font-mono uppercase w-96 pb-4">
     <div class="">
         <label for="nombre" class="p-4">Nombre:</label>
-        <div class=" ">
+        <div class="text-black ">
             <input class="form-control" placeholder="Accesorio" required="required" name="nombre" type="text"
                 id="nombre">
         </div>

@@ -1,5 +1,5 @@
 <x-app-layout>
-<div class="min-h-screen mb-5 bg-gray-100">
+<div class="min-h-screen mb-5 bg-gray-800">
     {{--  @livewire('navigation-dropdown')  --}}
 
     <div class="panel-body">
@@ -10,7 +10,7 @@
                 enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <h1 class="font-bold text-3xl text-center uppercase  ">Actualizar</h1>
+                <h1 class="font-bold text-3xl text-center text-white uppercase  ">Actualizar</h1>
                 @include('admin.accesorios.frm.prt')
 
             </form>
