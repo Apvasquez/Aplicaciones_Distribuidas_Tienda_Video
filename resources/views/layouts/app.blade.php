@@ -22,7 +22,7 @@
     <body class="font-sans antialiased -mt-2">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gradient-to-r from-[#2A475E] to-[#1B2838] ">
+        <div class="min-h-screen bg-gradient-to-r from-[#69bec9] to-[#ffffff] ">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
