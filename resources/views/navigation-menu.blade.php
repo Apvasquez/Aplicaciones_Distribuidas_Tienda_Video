@@ -21,6 +21,13 @@
                     <x-jet-nav-link href="{{ route('acerca') }}" :active="request()->routeIs('acerca')">
                         {{ __('Acerca_de') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('centro') }}" :active="request()->routeIs('centro')">
+                        {{ __('Centros Medicos') }}
+                    </x-jet-nav-link>
+                    
+                    <x-jet-nav-link href="{{ route('especialidad') }}" :active="request()->routeIs('especialidad')">
+                        {{ __('Especialidades') }}
+                    </x-jet-nav-link>
 
 
 
