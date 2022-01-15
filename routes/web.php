@@ -5,6 +5,10 @@ use App\Http\Controllers\Acerca;
 use App\Http\Controllers\VideoJuego;
 use App\Http\Controllers\AccesoriosController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CentroController;
+use App\Http\Controllers\EspecialidadesController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +22,9 @@ use App\Http\Controllers\CategoriaController;
 
 Route::get('/acerca',[Acerca::class ,'index'])->name('acerca') ;
 Route::get('/videojuego',[VideoJuego::class ,'index'])->name('videojuego') ;
+Route::get('/centro',[CentroController::class ,'index'])->name('centro') ;
+Route::get('/especialidad',[EspeciaidadesController::class ,'index'])->name('especialidad') ;
+
 
 Route::get('/', function () {
     return view('welcome');
