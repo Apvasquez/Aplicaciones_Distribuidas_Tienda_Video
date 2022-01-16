@@ -13,12 +13,19 @@ class CreateMedicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('medico', function (Blueprint $table) {
+        Schema::create('medicos', function (Blueprint $table) {
 
-            $table->integer('codigo')->primary();
+            $table->bigIncrements('id');
             $table->string('funcion');
             $table->string('experiencia');
-            // $table->foreign('codigo')->references('codigo')->on('empleado');
+            $table->integer('empleado_codigo');
+            $table->foreign('empleado_codigo')->references('id')->on('empleados');
+
+
+
+
+
+            $table->timestamps();
 
 
 

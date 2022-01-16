@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Consulta extends Model
 {
     use HasFactory;
-    protected $filliable = ['codigo','centro_codigo','empleado_codigo','especialidad_codigo','fecha','hora','paciente'];
+
+    protected $primaryKey = 'codigo';
+    public $incrementing = false;
+    protected $table = 'consulta';
+    protected $filliable = ['centro_codigo','empleado_codigo','especialidad_codigo','fecha','hora','paciente'];
 }

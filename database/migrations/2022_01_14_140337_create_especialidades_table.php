@@ -13,10 +13,11 @@ class CreateEspecialidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('especialidad', function (Blueprint $table) {
-            $table->integer('codigo')->unique()->primary();
+        Schema::create('especialidades', function (Blueprint $table) {
+            $table->bigIncrements('id')->unique();
             $table->string('nombre');       // For MySQL 8.0 use string('name', 125);
             $table->string('descripcion');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateEspecialidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('especialidad');
+        Schema::dropIfExists('especialidades');
     }
 }

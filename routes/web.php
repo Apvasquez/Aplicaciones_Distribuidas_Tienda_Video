@@ -7,6 +7,7 @@ use App\Http\Controllers\AccesoriosController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CentroController;
 use App\Http\Controllers\EspecialidadesController;
+use App\Http\Controllers\EmpleadoController;
 
 
 /*
@@ -23,6 +24,7 @@ use App\Http\Controllers\EspecialidadesController;
 Route::get('/acerca',[Acerca::class ,'index'])->name('acerca') ;
 Route::get('/videojuego',[VideoJuego::class ,'index'])->name('videojuego') ;
 Route::get('/centro',[CentroController::class ,'index'])->name('centro') ;
+Route::get('/empleado',[EmpleadoController::class ,'index'])->name('empleado') ;
 Route::get('/especialidad',[EspeciaidadesController::class ,'index'])->name('especialidad') ;
 
 

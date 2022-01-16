@@ -13,13 +13,11 @@ class CreateCentrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('centro', function (Blueprint $table) {
-        //    $table->id();
-            $table->integer('codigo')->unique()->primary();
+        Schema::create('centros', function (Blueprint $table) {
+            $table->bigIncrements('id')->unique();
             $table->string('nombre');       // For MySQL 8.0 use string('name', 125);
             $table->string('direccion');
-            $table->string('telefono');
-                 // For MySQL 8.0 use string('name', 125);
+            $table->string('telefono');                 // For MySQL 8.0 use string('name', 125);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateCentrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('centro');
+        Schema::dropIfExists('centros');
     }
 }
