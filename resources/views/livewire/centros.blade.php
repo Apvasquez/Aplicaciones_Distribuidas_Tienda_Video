@@ -2,7 +2,7 @@
     <div id="button-trigger" class="">
         <div class="card-content" x-data="{open : false , for_edit : false}">
             <div x-show="!open" class="font-mono font-normal uppercase tracking-wide w-full  rounded p-2 bg-white">
-                Lista de Categorias
+                Lista de Centros Medicos
             </div>
             <div class="row mt-0">
                 <div class="max-w-7xl px-2 mx-auto mb-1 overflow-hidden bg-white rounded-lg border shadow-sm ">
@@ -14,21 +14,15 @@
                         </div>
                         <div class="grow rounded  " x-show="!open">
                             <input class="w-full h-9 mx-2 rounded" wire:model="search" type="text"
-                                placeholder="Buscar Categoria..." />
+                                placeholder="Buscar Centro..." />
                         </div>
                     </div>
                     <div x-show="open">
                         <div class="font-mono text-slate-900 border m-2 p-2 rounded shadow-md text-center ">
+                            
                             <label class="block mx-auto mb-2 ">
-                                <span for="id" class="mb-2 font-bold form-label ">NOMMBRE</label>
-                            <input wire:model="nombre" type="text" placeholder="Ingrese el nombre.."
-                                class="w-1/2 rounded form-input" required>
-                            {{--  @error('id_cor') <span class="error">{{ $message }}</span> @enderror  --}}
-                            <div class="text-red-700">
-                            </div>
-                            <label class="block mx-auto mb-2 ">
-                                <span for="nombre" class="mb-2 font-bold form-label ">DESCRIPCION</label>
-                            <input wire:model="descripcion" type="text" placeholder="Ingrese la descripcion "
+                                <span for="nombre" class="mb-2 font-bold form-label ">Nombre</label>
+                            <input wire:model="nombre" type="text" placeholder="Ingrese un nombre "
                                 class="w-1/2 rounded form-input" required>
                             {{--  @error('nombre') <span class="error">{{ $message }}</span> @enderror  --}}
 
@@ -36,23 +30,25 @@
                             </div>
 
                             </label>
-                            <label class="block mx-auto mb-2 text-center">
-                                <span for="guard_name" class="mb-2 font-bold form-label">TIPOP</label>
-                                    <select class="m-2 w-40" name="" id="" wire:model="tipo">
-                                        <option value="Accion">Accion</option>
-                                        <option value="Arcade">Arcade</option>
-                                        <option value="Clásico">Clásico</option>
-                                        <option value="Aventura">Aventura</option>
-                                        <option value="Deportes">Deportes</option>
-                                        {{-- <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option> --}}
-                                    </select>
-                            {{--  @error('pais') <span class="error">{{ $message }}</span> @enderror  --}}
+                            <label class="block mx-auto mb-2 ">
+                                <span for="nombre" class="mb-2 font-bold form-label ">Direccion</label>
+                            <input wire:model="direccion" type="text" placeholder="Ingrese una direccion "
+                                class="w-1/2 rounded form-input" required>
+                            {{--  @error('nombre') <span class="error">{{ $message }}</span> @enderror  --}}
 
                             <div class="text-red-700">
                             </div>
+
+                            </label>
+                            <label class="block mx-auto mb-2 ">
+                                <span for="nombre" class="mb-2 font-bold form-label ">Telefono</label>
+                            <input wire:model="telefono" type="text" placeholder="Ingrese un telefono "
+                                class="w-1/2 rounded form-input" required>
+                            {{--  @error('nombre') <span class="error">{{ $message }}</span> @enderror  --}}
+
+                            <div class="text-red-700">
+                            </div>
+
                             </label>
                             @if ($accion == 'store')
                             <div class="mt-6 text-center">
@@ -80,8 +76,8 @@
                                     <tr class="text-justify uppercase text-sm">
                                         <th class="px-4 py-3 w-">CODIGO</th>
                                         <th class="px-4 py-3">NOMBRE</th>
-                                        <th class="px-4 py-3">DESCRIPCION </th>
-                                        <th class="px-4 py-3">TIPO</th>
+                                        <th class="px-4 py-3">DIRECCION </th>
+                                        <th class="px-4 py-3">TELEFONO</th>
                                         <th class="px-4 py-3">ACCIÓN</th>
 
                                     </tr>
@@ -89,10 +85,10 @@
                                 <tbody class="w-full mx-auto divide-y divide-gray-300">
                                     @foreach ($categorias as $cat)
                                         <tr class="text-xs text-justify text-gray-500">
-                                            <td class="px-4 ">{{ $cat->id }}</td>
+                                            <td class="px-4 ">{{ $cat->codigo }}</td>
                                             <td class="px-4 ">{{ $cat->nombre }}</td>
-                                            <td class="px-4 ">{{ $cat->descripcion }}</td>
-                                            <td class="px-4 ">{{ $cat->tipo }}</td>
+                                            <td class="px-4 ">{{ $cat->direccion }}</td>
+                                            <td class="px-4 ">{{ $cat->telefono }}</td>
 
                                             <td class="px-4 py-1">
                                                 <button wire:click="edit({{ $cat }})"
