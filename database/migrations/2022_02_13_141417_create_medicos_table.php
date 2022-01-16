@@ -18,8 +18,7 @@ class CreateMedicosTable extends Migration
             $table->integer('codigo')->primary();
             $table->string('funcion');
             $table->string('experiencia');
-            $table->integer('empleado_codigo');
-            $table->foreign('empleado_codigo')->references('codigo')->on('empleado');
+            // $table->foreign('codigo')->references('codigo')->on('empleado');
 
 
 

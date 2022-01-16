@@ -10,5 +10,9 @@ class Especialidades extends Model
     use HasFactory;
     use HasFactory;
     protected $fillable = ['codigo', 'nombre', 'descripcion'];
+    public function consulta()
+    {
+        return $this->hasMany('App\Models\Consulta','especiaidad_codigo','codigo');
+    }
 
 }
