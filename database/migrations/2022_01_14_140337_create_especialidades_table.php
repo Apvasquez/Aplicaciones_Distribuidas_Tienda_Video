@@ -14,10 +14,9 @@ class CreateEspecialidadesTable extends Migration
     public function up()
     {
         Schema::create('especialidad', function (Blueprint $table) {
-            $table->id();
-            $table->integer('codigo');
+            $table->integer('codigo')->unique()->primary();
             $table->string('nombre');       // For MySQL 8.0 use string('name', 125);
-            $table->string('descripcion'); 
+            $table->string('descripcion');
         });
     }
 

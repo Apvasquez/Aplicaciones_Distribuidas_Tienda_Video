@@ -12,13 +12,14 @@ class CreateCentrosTable extends Migration
      * @return void
      */
     public function up()
-    {   
+    {
         Schema::create('centro', function (Blueprint $table) {
-           $table->id();
-            $table->integer('codigo');
+        //    $table->id();
+            $table->integer('codigo')->unique()->primary();
             $table->string('nombre');       // For MySQL 8.0 use string('name', 125);
             $table->string('direccion');
-            $table->string('telefono');       // For MySQL 8.0 use string('name', 125); 
+            $table->string('telefono');
+                 // For MySQL 8.0 use string('name', 125);
             $table->timestamps();
         });
     }
