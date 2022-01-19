@@ -9,9 +9,8 @@ class Especialidades extends Model
 {
     use HasFactory;
 
-   
+
     protected $fillable = [ 'nombre', 'descripcion'];
-    public $incrementing = false;
     // public function consulta()
     // {
     //     return $this->hasMany('App\Models\Consulta','especiaidad_codigo','codigo');

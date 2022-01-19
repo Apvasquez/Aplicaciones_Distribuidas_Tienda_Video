@@ -15,27 +15,27 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('admin/accesorios') }}" :active="request()->routeIs('admin/accesorios')">
-                        {{ __('VideoJuegos') }}
+                    <x-jet-nav-link href="{{ route('empleado') }}" :active="request()->routeIs('empleado')">
+                        {{ __('Empleados') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('acerca') }}" :active="request()->routeIs('acerca')">
-                        {{ __('Acerca_de') }}
+                    <x-jet-nav-link href="{{ route('especialidad') }}" :active="request()->routeIs('especialidad')">
+                        {{ __('Especialidad') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('centro') }}" :active="request()->routeIs('centro')">
                         {{ __('Centros Medicos') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('consulta') }}" :active="request()->routeIs('consulta')">
+                        {{ __('Consulta') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('medico') }}" :active="request()->routeIs('medico')">
+                        {{ __('Medicos') }}
+                    </x-jet-nav-link>
+
+
+
+
+
                     
-                    <x-jet-nav-link href="{{ route('especialidad') }}" :active="request()->routeIs('especialidad')">
-                        {{ __('Especialidades') }}
-                    </x-jet-nav-link>
-
-
-
-
-
-                    <x-jet-nav-link href="{{ route('categorias') }}" :active="request()->routeIs('categorias')">
-                        {{ __('Categorias') }}
-                    </x-jet-nav-link>
 
                 </div>
             </div>

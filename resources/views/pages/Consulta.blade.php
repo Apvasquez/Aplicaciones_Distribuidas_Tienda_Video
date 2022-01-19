@@ -1,3 +1,4 @@
 <x-app-layout>
-    @livewire('especialidadl')
+    @livewire('consulta-l')
 </x-app-layout>
+

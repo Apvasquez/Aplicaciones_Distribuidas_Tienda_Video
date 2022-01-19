@@ -12,13 +12,13 @@ class Centro extends Model
     use HasFactory;
 
     protected $fillable = [ 'nombre', 'direccion','telefono'];
-    // public function consulta()
-    // {
-    //     return $this->hasMany('App\Models\Consulta','centro_codigo','codigo');
-    // }
-    // public function empleado()
-    // {
-    //     return $this->hasMany('App\Models\Empleado','empleado_codigo','codigo');
-    // }
+    public function consulta()
+    {
+        return $this->hasMany('App\Models\Consulta','centro_codigo','id');
+    }
+    public function empleado()
+    {
+        return $this->hasMany('App\Models\Empleado','empleado_codigo','id');
+    }
 
 }

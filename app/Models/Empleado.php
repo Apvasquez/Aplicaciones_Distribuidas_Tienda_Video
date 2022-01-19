@@ -10,10 +10,15 @@ class Empleado extends Model
 
 
     use HasFactory;
-    
-    protected $filliable = ['nombre','direccion','salario','fecha_entrega','centro_codigo','medico_codigo'];
-    // public function consulta()
-    // {
-    //     return $this->hasMany('App\Models\Consulta','empleado_codigo','codigo');
-    // }
+
+    protected $fillable = ['nombre','direccion','salario','fecha_entrada','centro_codigo','medico_codigo'];
+    public function consulta()
+    {
+        return $this->hasMany('App\Models\Consulta','empleado_codigo','id');
+    }
+    public function centro(){
+        return $this->belongsTo('App\Models\Centro','id','id');
+
+
+    }
 }

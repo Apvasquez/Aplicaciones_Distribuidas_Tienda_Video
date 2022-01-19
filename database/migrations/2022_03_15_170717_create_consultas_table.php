@@ -22,7 +22,6 @@ class CreateConsultasTable extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->string('paciente');
-            $table->foreign('centro_codigo')->references('id')->on('centros');
             $table->foreign('empleado_codigo')->references('id')->on('empleados');
             $table->foreign('especialidad_codigo')->references('id')->on('especialidades');
 

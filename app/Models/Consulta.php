@@ -9,8 +9,5 @@ class Consulta extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'codigo';
-    public $incrementing = false;
-    protected $table = 'consulta';
-    protected $filliable = ['centro_codigo','empleado_codigo','especialidad_codigo','fecha','hora','paciente'];
+    protected $fillable = ['centro_codigo','empleado_codigo','especialidad_codigo','fecha','hora','paciente'];
 }

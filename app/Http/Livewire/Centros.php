@@ -10,7 +10,7 @@ class Centros extends Component
 {
     public $search = '';
     public $nombre = '';
-    public $direcccion = '';
+    public $direccion = '';
     public $telefono= '';
     public $id_cent;
     public $accion = 'store';
@@ -32,7 +32,7 @@ class Centros extends Component
     }
        public function render()
     {
-        $centro = Centro::all();
+        $centro = Centro::where('nombre','like','%'. $this->search . '%')->get();
         return view('livewire.centros',compact('centro'));
     }
     public function store()
@@ -45,7 +45,7 @@ class Centros extends Component
             'telefono' => $this->telefono,
         ]);
 
-        $this->reset(['nombre','direccion','accion','telefono']);
+        $this->reset(['nombre','direccion','telefono','accion']);
     }
 
     //Edit Corresponsales
@@ -70,13 +70,13 @@ class Centros extends Component
             'telefono' => $this->telefono,
 
         ]);
-        $this->reset(['nombre','direccion','accion','telefono']);
+        $this->reset(['nombre','direccion','telefono','accion']);
 
 
     }
     function
 default() {
-    $this->reset(['nombre','direccion','accion','telefono']);
+    $this->reset(['nombre','direccion','telefono','accion']);
 
     }
     public function destroy(Centro $corr)
