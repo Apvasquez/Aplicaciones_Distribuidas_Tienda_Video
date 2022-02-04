@@ -18,8 +18,10 @@ class CreateMedicosTable extends Migration
             $table->bigIncrements('id');
             $table->string('funcion');
             $table->string('experiencia');
-            $table->integer('empleado_codigo');
-            $table->foreign('empleado_codigo')->references('id')->on('empleados');
+            $table->unsignedBigInteger('empleado_codigo');
+            $table->foreign('empleado_codigo')->references('id')->on('empleados')->onDelete('cascade');
+
+
 
 
 

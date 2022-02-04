@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div x-show="open">
-                    <div class="font-mono text-slate-900 border m-2 p-2 text-center ">
+                    <div class="font-mono text-slate-900 border m-2 p-2 rounded shadow-md text-center ">
 
                         <label class="block mx-auto mb-2 ">
                             <span for="id" class="mb-2 font-bold form-label ">NOMBRE</label>
@@ -81,21 +81,22 @@
                                     class="px-2 py-2 font-bold text-white bg-[#ff7514] rounded hover:bg-red-800">Agregar</button>
                             </div>
                         @else
-                            <div class="mt-6 text-center">
-                                <button wire:click="default"
-                                    x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
-                                    class="px-2 py-2  font-bold text-black-dark border bg-gray-600 rounded hover:bg-gray-700 ">
-                                    Cancelar</button>
-                                <button wire:click="update" x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
-                                    class="px-2 py-2 font-bold text-white border bg-[#ff7514] rounded  sm:px-1">Editar</button>
-                            </div>
+                        <div class="mt-6 text-center">
+                            <button wire:click="default"
+                                x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
+                                class="px-2 py-2  font-bold text-black-dark border bg-gray-600 rounded hover:bg-gray-700 ">
+                                Cancelar</button>
+                            <button wire:click="update"
+                                x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
+                                class="px-2 py-2 font-bold text-white border bg-[#9c182f] rounded  sm:px-1">Editar</button>
+                        </div>
                         @endif
                     </div>
                 </div>
                 <div x-show="!open" class=" ">
                     <div class="w-full mx-auto overflow-hidden  rounded-lg shadow min-w-max-content">
                         <table class="w-full overflow-hidden  rounded-lg shadow ">
-                            <thead class="border-b border-gray-500 ">
+                            <thead class="border-b border-gray-700 ">
                                 <tr class="text-justify uppercase text-sm">
                                     <th class="px-4 py-3 w-">CODIGO</th>
                                     <th class="px-4 py-3">NOMBRE</th>
@@ -118,7 +119,12 @@
                                         <td class="px-4 text-slate-900 ">{{ $empleado->direccion }}</td>
                                         <td class="px-4 text-slate-900 ">{{ $empleado->salario }}</td>
                                         <td class="px-4 text-slate-900 ">{{ $empleado->fecha_entrada }}</td>
-                                        <td class="px-4 text-slate-900 ">{{ $empleado->centro_codigo }}</td>
+
+
+                                        <td class="px-4 text-slate-900 ">{{ $empleado->centros->nombre }}</td>
+
+
+
 
                                         <td class="px-4 py-1">
                                             <button wire:click="edit({{ $empleado }})"

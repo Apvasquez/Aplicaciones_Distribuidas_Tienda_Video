@@ -1,19 +1,19 @@
 <div id="button-trigger" class="">
     <div class="card-content max-w-5xl mx-auto my-2 py-2" x-data="{open : false , for_edit : false ,add : false,edit : false}">
-        <div x-show="!open" class="font-mono font-normal uppercase m-2 tracking-wide max-w-5xl text-center rounded p-2 bg-white">
+        <div x-show="!open" class="font-mono font-normal uppercase m-2 tracking-wide max-w-5xl text-center rounded p-2">
             lista de Consultas
         </div>
-        <div x-show="add" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2 bg-white">
+        <div x-show="add" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2">
             Agregar Consulta
         </div>
-        <div x-show="edit" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2 bg-white">
+        <div x-show="edit" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2">
             Editar Consulta
         </div>
-                <div class="max-w-5xl px-2 mx-auto mb-1 overflow-hidden bg-white rounded-lg border shadow-sm ">
+                <div class="max-w-5xl px-2 mx-auto mb-1 overflow-hidden rounded-lg border shadow-sm ">
                     <div class="flex m-2 aspect-auto">
                         <div class="flex-none">
                             <button
-                            class="bg-[#9c182f] border px-4 py-1 font-mono uppercase tracking-tighter rounded text-white hover:bg-[#be1935] "
+                            class="bg-[#ff7514] border px-4 py-1 font-mono uppercase tracking-tighter rounded text-white hover:bg-[#ff7514] "
                             x-on:click="open = !open, for_edit = !for_edit , add = !add" x-show="!for_edit">+</button>
                         </div>
                         <div class="grow rounded  " x-show="!open">
@@ -103,9 +103,9 @@
                         </div>
                     </div>
                     <div x-show="!open" class=" ">
-                        <div class="w-full mx-auto overflow-hidden bg-white rounded-lg shadow min-w-max-content">
-                            <table class="w-full overflow-hidden bg-white rounded-lg shadow ">
-                                <thead class="border-b border-gray-500 bg-gray-50">
+                        <div class="w-full mx-auto overflow-hidden rounded-lg shadow min-w-max-content">
+                            <table class="w-full overflow-hidden rounded-lg shadow ">
+                                <thead class="border-b border-gray-500">
                                     <tr class="text-justify uppercase text-sm">
                                         <th class="px-4 py-3 w-">CODIGO</th>
                                         <th class="px-4 py-3">CENTRO</th>
@@ -120,20 +120,20 @@
                                 </thead>
                                 <tbody class="w-full mx-auto divide-y divide-gray-300">
                                     @foreach ($consulta as $con)
-                                        <tr class="text-xs text-justify text-gray-500">
+                                        <tr class="text-xs text-justify text-gray-700">
                                             <td class="px-4 ">{{ $con->id }}</td>
-                                            <td class="px-4 ">{{ $con->centro_codigo }}</td>
-                                            <td class="px-4 ">{{ $con->empleado_codigo }}</td>
-                                            <td class="px-4 ">{{ $con->especialidad_codigo }}</td>
+                                            <td class="px-4 ">{{ $con->centro->nombre }}</td>
+                                            <td class="px-4 ">{{ $con->empleado->nombre }}</td>
+                                            <td class="px-4 ">{{ $con->especialidad->nombre }}</td>
                                             <td class="px-4 ">{{ $con->fecha }}</td>
                                             <td class="px-4 ">{{ $con->hora }}</td>
                                             <td class="px-4 ">{{ $con->paciente }}</td>
                                             <td class="px-4 py-1">
                                                 <button wire:click="edit({{ $con }})"
                                                     x-on:click="open = !open , for_edit = !for_edit, edit = !edit"
-                                                    class="px-2 py-2 font-bold text-[#9c182f] bg-white border border-[#9c182f] rounded  sm:px-1">Editar</button>
+                                                    class="px-2 py-2 font-bold text-[#ff7514]  border border-[#ff7514] rounded  sm:px-1">Editar</button>
                                                 <button wire:click="destroy({{ $con }})"
-                                                    class="px-2 py-2 font-bold text-[#9c182f] bg-white border border-[#9c182f] rounded  sm:px-1">Eliminar</button>
+                                                    class="px-2 py-2 font-bold text-[#9c182f] border border-[#9c182f] rounded  sm:px-1">Eliminar</button>
 
                                             </td>
                                         </tr>

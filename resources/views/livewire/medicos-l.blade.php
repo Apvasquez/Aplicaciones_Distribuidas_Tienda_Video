@@ -1,19 +1,19 @@
 <div id="button-trigger" class="">
-    <div class="card-content max-w-5xl mx-auto my-2 py-2" x-data="{open : false , for_edit : false ,add : false,edit : false}">
-        <div x-show="!open" class="font-mono font-normal uppercase m-2 tracking-wide max-w-5xl text-center rounded p-2 bg-white">
+    <div class="max-w-5xl rounded-xl border bg-transparent border-white mx-auto my-2 py-2 shadow-cyan-700 shadow-xl" x-data="{open : false , for_edit : false ,add : false,edit : false}">
+        <div x-show="!open" class="font-mono font-normal uppercase m-2 tracking-wide max-w-5xl text-center rounded p-2 ">
             lista de Médicos
         </div>
-        <div x-show="add" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2 bg-white">
+        <div x-show="add" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2 ">
             Agregar Médico
         </div>
-        <div x-show="edit" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2 bg-white">
+        <div x-show="edit" class="font-mono m-2 font-normal uppercase tracking-wide w-full  rounded p-2 ">
             Editar Médico
         </div>
-                <div class="max-w-5xl px-2 mx-auto mb-1 overflow-hidden bg-white rounded-lg border shadow-sm ">
+                <div class="max-w-5xl px-2 mx-auto mb-1 overflow-hidden  rounded-lg border shadow-sm ">
                     <div class="flex m-2 aspect-auto">
                         <div class="flex-none">
                             <button
-                            class="bg-[#9c182f] border px-4 py-1 font-mono uppercase tracking-tighter rounded text-white hover:bg-[#be1935] "
+                            class="bg-[#ff7514] border px-4 py-1 font-mono uppercase tracking-tighter rounded text-white hover:bg-[#ff7514] "
                             x-on:click="open = !open, for_edit = !for_edit , add = !add" x-show="!for_edit">+</button>
                         </div>
                         <div class="grow rounded  " x-show="!open">
@@ -51,27 +51,29 @@
 
                             @if ($accion == 'store')
                             <div class="mt-6 text-center">
-                             <button wire:click="default" x-on:click="open = !open , for_edit =!for_edit ,add = !add"
-                                 class="px-2 py-2  font-bold text-black-dark border bg-gray-600 rounded hover:bg-gray-700 ">
-                                 Cancelar</button>
-                             <button wire:click="store" x-on:click="open = !open , for_edit =!for_edit , add = !add"
-                                 class="px-2 py-2 font-bold text-white bg-[#9c182f] rounded hover:bg-red-800">Agregar</button>
-                         </div>
-                            @else
-                            <div class="mt-6 text-center">
-                             <button wire:click="default" x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
-                                 class="px-2 py-2  font-bold text-black-dark border bg-gray-600 rounded hover:bg-gray-700 ">
-                                 Cancelar</button>
-                             <button wire:click="update" x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
-                             class="px-2 py-2 font-bold text-white border bg-[#9c182f] rounded  sm:px-1">Editar</button>
-                         </div>
-                            @endif
+                                <button wire:click="default" x-on:click="open = !open , for_edit =!for_edit ,add = !add"
+                                    class="px-2 py-2  font-bold text-black-dark border bg-gray-600 rounded hover:bg-gray-700 ">
+                                    Cancelar</button>
+                                <button wire:click="store" x-on:click="open = !open , for_edit =!for_edit , add = !add"
+                                    class="px-2 py-2 font-bold text-white bg-[#ff7514] rounded hover:bg-red-800">Agregar</button>
+                            </div>
+                        @else
+                        <div class="mt-6 text-center">
+                            <button wire:click="default"
+                                x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
+                                class="px-2 py-2  font-bold text-black-dark border bg-gray-600 rounded hover:bg-gray-700 ">
+                                Cancelar</button>
+                            <button wire:click="update"
+                                x-on:click="open = !open , for_edit =!for_edit,edit = !edit"
+                                class="px-2 py-2 font-bold text-white border bg-[#9c182f] rounded  sm:px-1">Editar</button>
+                        </div>
+                        @endif
                         </div>
                     </div>
                     <div x-show="!open" class=" ">
-                        <div class="w-full mx-auto overflow-hidden bg-white rounded-lg shadow min-w-max-content">
-                            <table class="w-full overflow-hidden bg-white rounded-lg shadow ">
-                                <thead class="border-b border-gray-500 bg-gray-50">
+                        <div class="w-full mx-auto overflow-hidden  rounded-lg shadow min-w-max-content">
+                            <table class="w-full overflow-hidden  rounded-lg shadow ">
+                                <thead class="border-b border-gray-500 ">
                                     <tr class="text-justify uppercase text-sm">
                                         <th class="px-4 py-3 w-">CODIGO</th>
                                         <th class="px-4 py-3">FUNCION</th>
@@ -83,7 +85,7 @@
                                 </thead>
                                 <tbody class="w-full mx-auto divide-y divide-gray-300">
                                     @foreach ($medico as $cat)
-                                        <tr class="text-xs text-justify text-gray-500">
+                                        <tr class="text-xs text-justify text-gray-700">
                                             <td class="px-4 ">{{ $cat->id }}</td>
                                             <td class="px-4 ">{{ $cat->funcion }}</td>
                                             <td class="px-4 ">{{ $cat->experiencia }}</td>
@@ -92,9 +94,9 @@
                                             <td class="px-4 py-1">
                                                 <button wire:click="edit({{ $cat }})"
                                                     x-on:click="open = !open , for_edit = !for_edit , edit = !edit"
-                                                    class="px-2 py-2 font-bold text-[#9c182f] bg-white border border-[#9c182f] rounded  sm:px-1">Editar</button>
+                                                    class="px-2 py-2 font-bold text-[#ff7514]  border border-[#ff7514] rounded  sm:px-1">Editar</button>
                                                 <button wire:click="destroy({{ $cat }})"
-                                                    class="px-2 py-2 font-bold text-[#9c182f] bg-white border border-[#9c182f] rounded  sm:px-1">Eliminar</button>
+                                                class="px-2 py-2 font-bold text-red-700 border border-[#ff7514] hover:bg-red-500 hover:text-white rounded  sm:px-1">Eliminar</button>
 
                                             </td>
                                         </tr>

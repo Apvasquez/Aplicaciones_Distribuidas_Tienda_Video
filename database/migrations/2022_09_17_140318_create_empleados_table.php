@@ -20,7 +20,7 @@ class CreateEmpleadosTable extends Migration
             $table->string('direccion');
             $table->integer('salario');
             $table->date('fecha_entrada');
-            $table->integer('centro_codigo');
+            $table->unsignedBigInteger('centro_codigo');
             $table->foreign('centro_codigo')->references('id')->on('centros');
 
             $table->timestamps();

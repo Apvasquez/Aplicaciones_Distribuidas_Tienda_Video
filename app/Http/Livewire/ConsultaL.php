@@ -9,7 +9,7 @@ use App\Models\Centro;
 class ConsultaL extends Component
 {
     public $search = '';
-    public $centro_codigo = '';
+    public $centro_codigo = '1';
     public $empleado_codigo = '';
     public $especialidad_codigo = '';
     public $fecha;

@@ -16,14 +16,16 @@ class CreateConsultasTable extends Migration
         Schema::create('consultas', function (Blueprint $table) {
 
             $table->bigIncrements('id');
-            $table->integer('centro_codigo');
-            $table->integer('empleado_codigo');
-            $table->integer('especialidad_codigo');
+            $table->unsignedBigInteger('centro_codigo');
+            $table->unsignedBigInteger('empleado_codigo');
+            $table->unsignedBigInteger('especialidad_codigo');
             $table->date('fecha');
             $table->time('hora');
             $table->string('paciente');
             $table->foreign('empleado_codigo')->references('id')->on('empleados');
             $table->foreign('especialidad_codigo')->references('id')->on('especialidades');
+            $table->foreign('centro_codigo')->references('id')->on('centros');
+
 
 
 

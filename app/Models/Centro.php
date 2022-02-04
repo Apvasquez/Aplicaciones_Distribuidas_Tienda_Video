@@ -18,7 +18,7 @@ class Centro extends Model
     }
     public function empleado()
     {
-        return $this->hasMany('App\Models\Empleado','empleado_codigo','id');
+        return $this->hasMany('App\Models\Empleado','centro_codigo','id');
     }
 
 }

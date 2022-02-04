@@ -18,7 +18,6 @@ class CreateCentrosTable extends Migration
             $table->string('nombre');       // For MySQL 8.0 use string('name', 125);
             $table->string('direccion');
             $table->string('telefono');
-            $table->foreign('id')->references('centro_codigo')->on('consultas');
             // For MySQL 8.0 use string('name', 125);
             $table->timestamps();
         });

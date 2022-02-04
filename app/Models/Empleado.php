@@ -16,8 +16,8 @@ class Empleado extends Model
     {
         return $this->hasMany('App\Models\Consulta','empleado_codigo','id');
     }
-    public function centro(){
-        return $this->belongsTo('App\Models\Centro','id','id');
+    public function centros(){
+        return $this->belongsTo('App\Models\Centro','centro_codigo','id');
 
 
     }
