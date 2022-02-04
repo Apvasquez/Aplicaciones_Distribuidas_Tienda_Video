@@ -14,7 +14,7 @@ class Proveedor extends Component
     public $id_cat;
     public $accion = 'store';
 
-  
+
        public function render()
     {
         $proveedor = Proveedores::where('nombre','like','%'. $this->search . '%')->get();
@@ -33,23 +33,23 @@ class Proveedor extends Component
         $this->reset(['nombre', 'descripcion','accion','lugar']);
     }
 
-    //Edit Corresponsales
-    public function edit(Proveedores $corr)
+    //Edit proesponsales
+    public function edit(Proveedores $pro)
     {
         $this->accion = "update";
-        $this->nombre = $corr->nombre;
-        $this->descripcion = $corr->descripcion;
-        $this->lugar = $corr->lugar;
-        $this->id_cat = $corr->id;
+        $this->nombre = $pro->nombre;
+        $this->descripcion = $pro->descripcion;
+        $this->lugar = $pro->lugar;
+        $this->id_cat = $pro->id;
 
     }
 
 
     public function update()
     {
-        $this->validate();
-        $corr = Proveedores::find($this->id_cat);
-        $corr->update([
+        // $this->validate();
+        $pro = Proveedores::find($this->id_cat);
+        $pro->update([
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
             'lugar' => $this->lugar,
@@ -64,8 +64,8 @@ default() {
     $this->reset(['nombre', 'descripcion','accion','lugar']);
 
     }
-    public function destroy(Proveedores $corr)
+    public function destroy(Proveedores $pro)
     {
-        $corr->delete();
+        $pro->delete();
     }
 }
